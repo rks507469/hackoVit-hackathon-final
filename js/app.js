@@ -2,6 +2,7 @@
 
 //taking the input from the extension Page
 let output;
+let detected, total, undetected, checkedUrl;
 //making it a complete URL
 
 //converting it the sha65
@@ -114,9 +115,16 @@ async function getData() {
 
   $.getJSON(finalURL, function (data) {
     console.log(data);
-    jsonParsing(data);
+    let infomap = new Map();
+    infomap.set("positives", data.positives);
+    infomap.set("total", data.total);
+    infomap.set("url", data.url);
+    detected = parseInt(infomap.get("positives"));
+    total = parseInt(infomap.get("total"));
+    undetected = total - detected;
+    checkedUrl = infomap.get("url");
+    chartIt(detected, undetected, total);
   });
-
 }
 // //fetching the data
 // const response = await fetch(apiUrl, {
@@ -132,12 +140,33 @@ async function getData() {
 //   }
 
 //function to iterate through the JSON file
-function jsonParsing(fetchedData) {
-    let infomap = new Map();
-    infomap.set("positives", fetchedData.positives);
-    infomap.set("total", fetchedData.total);
-    infomap.set("url", fetchedData.url);
-    console.log(infomap.get("positives"));
-    console.log(infomap.get("total"));
-    console.log(infomap.get("url"));
+// async function graphingdata() {
+//   undetected = total - detected;
+//     return {detected, undetected, total, checkedUrl};
+// }
+
+//technology stack
+
+//graphing or plotting function
+async function chartIt(detected, undetected, total) {
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type : 'doughnut',
+    data :data = {
+      datasets: [{
+          data: [detected, undetected, total],
+          backgroundColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(54, 162, 235, 0.8)'
+          ],
+          borderWidth: 2
+        }],
+      labels: [
+          'Detected',
+          'Undetected',
+          'Total'
+      ]
+  }
+  });
 }

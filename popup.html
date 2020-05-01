@@ -4,11 +4,11 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
-        <title>Security Extension</title>
+        <title></title>
         <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Open+Sans" type = "text/css">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="js/chart.js"></script>
      
-     <style>
+        <style>
          html, body {
              font-family: 'Open Sans', sans-serif;
              font-size: 14px;
@@ -16,63 +16,59 @@
              min-height: 180px;
              padding: 0;
              width: 384px;
-         }
+            }
 
-         h1{
+         h1 {
              font-family:  'Menlo', monospace;
              font-size: 24px;
              font-weight: 550;
              margin: 0;
              color: #ffffff;
-         }
+            }
 
          a:link , a:visited {
              color: black;
              outline:0;
              text-decoration: none;
-         }
+            }
 
-         img{
+         img {
              width: 40px;
              padding-right: 14px;
-         }
+            }
 
-         .modal-header{
+         .modal-header {
              align-items: center;
              border-bottom: 0.5px solid #dadada ;
-         }
+            }
 
-         .modal-content{
+         .modal-content {
              padding: 0 22px;
+            }
 
-         }
-
-         .modal-icons{
+         .modal-icons {
              border-top: 0.5px solid #dadada;
              height: 50px;
              width: 100%;
+            }
 
-        
-         }
-
-         .logo{
+         .logo {
              padding: 16px;
              background-color: #567482;
-         }
+            }
 
-         .logo-icon{
+         .logo-icon {
              vertical-align: text-bottom;
              margin-right: 0px;
-         }
+            }
 
          .version{
              color: #000;
              font-size: 18px;
              margin-left: 55px;
              font-weight: 500;
-         }
-
-     </style>
+            }
+        </style>
     </head>
     <body>
         <div class = "modal-header">
@@ -85,6 +81,7 @@
                 <input type="text" placeholder="Type URL" id="inputBox">
                 <button type="button" onclick="getInputValue()">Submit</button>
             </p>
+            <canvas id="myChart"></canvas>
         </div>
 
      <script src = "js/jquery.js"></script>
