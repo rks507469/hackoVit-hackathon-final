@@ -2,7 +2,6 @@
 
 //taking the input from the extension Page
 let output;
-let infomap = new Map();
 //making it a complete URL
 
 //converting it the sha65
@@ -93,7 +92,7 @@ var sha256 = function sha256(ascii) {
 function getInputValue() {
   let input = document.getElementById("inputBox").value;
   output = sha256(input);
-  //getData();
+  getData();
 }
 
 //now using the the API of the virus total
@@ -115,6 +114,7 @@ async function getData() {
 
   $.getJSON(finalURL, function (data) {
     console.log(data);
+    jsonParsing(data);
   });
 
 }
@@ -132,8 +132,8 @@ async function getData() {
 //   }
 
 //function to iterate through the JSON file
-//let fetchedData = {"scan_id": "d0e196a0c25d35dd0a84593cbae0f38333aa58529936444ea26453eab28dfc86-1588334401", "resource": "d0e196a0c25d35dd0a84593cbae0f38333aa58529936444ea26453eab28dfc86", "url": "https://www.google.com/", "response_code": 1, "scan_date": "2020-05-01 12:00:01", "permalink": "https://www.virustotal.com/url/d0e196a0c25d35dd0a84593cbae0f38333aa58529936444ea26453eab28dfc86/analysis/1588334401/", "verbose_msg": "Scan finished, scan information embedded in this object", "filescan_id": null, "positives": 0, "total": 79, "scans": {"Botvrij.eu": {"detected": false, "result": "clean site"}, "Feodo Tracker": {"detected": false, "result": "clean site"}, "CLEAN MX": {"detected": false, "result": "clean site"}, "DNS8": {"detected": false, "result": "clean site"}, "NotMining": {"detected": false, "result": "unrated site"}, "VX Vault": {"detected": false, "result": "clean site"}, "securolytics": {"detected": false, "result": "clean site"}, "Tencent": {"detected": false, "result": "clean site"}, "MalwarePatrol": {"detected": false, "result": "clean site"}, "MalSilo": {"detected": false, "result": "clean site"}, "Comodo Valkyrie Verdict": {"detected": false, "result": "clean site"}, "PhishLabs": {"detected": false, "result": "unrated site"}, "EmergingThreats": {"detected": false, "result": "clean site"}, "Sangfor": {"detected": false, "result": "clean site"}, "K7AntiVirus": {"detected": false, "result": "clean site"}, "Spam404": {"detected": false, "result": "clean site"}, "Virusdie External Site Scan": {"detected": false, "result": "clean site"}, "Artists Against 419": {"detected": false, "result": "clean site"}, "IPsum": {"detected": false, "result": "clean site"}, "Cyren": {"detected": false, "result": "clean site"}, "Quttera": {"detected": false, "result": "clean site"}, "CINS Army": {"detected": false, "result": "clean site"}, "AegisLab WebGuard": {"detected": false, "result": "clean site"}, "MalwareDomainList": {"detected": false, "result": "clean site", "detail": "http://www.malwaredomainlist.com/mdl.php?search=www.google.com"}, "Lumu": {"detected": false, "result": "clean site"}, "zvelo": {"detected": false, "result": "clean site"}, "Google Safebrowsing": {"detected": false, "result": "clean site"}, "Kaspersky": {"detected": false, "result": "clean site"}, "BitDefender": {"detected": false, "result": "clean site"}, "GreenSnow": {"detected": false, "result": "clean site"}, "G-Data": {"detected": false, "result": "clean site"}, "OpenPhish": {"detected": false, "result": "clean site"}, "Malware Domain Blocklist": {"detected": false, "result": "clean site"}, "AutoShun": {"detected": false, "result": "unrated site"}, "Trustwave": {"detected": false, "result": "clean site"}, "Web Security Guard": {"detected": false, "result": "clean site"}, "CyRadar": {"detected": false, "result": "clean site"}, "desenmascara.me": {"detected": false, "result": "clean site"}, "ADMINUSLabs": {"detected": false, "result": "clean site"}, "Malwarebytes hpHosts": {"detected": false, "result": "clean site"}, "Dr.Web": {"detected": false, "result": "clean site"}, "AlienVault": {"detected": false, "result": "clean site"}, "Emsisoft": {"detected": false, "result": "clean site"}, "Spamhaus": {"detected": false, "result": "clean site"}, "malwares.com URL checker": {"detected": false, "result": "clean site"}, "Phishtank": {"detected": false, "result": "clean site"}, "EonScope": {"detected": false, "result": "clean site"}, "Malwared": {"detected": false, "result": "clean site"}, "Avira": {"detected": false, "result": "clean site"}, "Cisco Talos IP Blacklist": {"detected": false, "result": "clean site"}, "CyberCrime": {"detected": false, "result": "clean site"}, "Antiy-AVL": {"detected": false, "result": "clean site"}, "Forcepoint ThreatSeeker": {"detected": false, "result": "clean site"}, "SCUMWARE.org": {"detected": false, "result": "clean site"}, "Certego": {"detected": false, "result": "clean site"}, "Yandex Safebrowsing": {"detected": false, "result": "clean site", "detail": "http://yandex.com/infected?l10n=en&url=https://www.google.com/"}, "ESET": {"detected": false, "result": "clean site"}, "Threatsourcing": {"detected": false, "result": "clean site"}, "URLhaus": {"detected": false, "result": "clean site"}, "SecureBrain": {"detected": false, "result": "clean site"}, "Nucleon": {"detected": false, "result": "clean site"}, "PREBYTES": {"detected": false, "result": "clean site"}, "Sophos": {"detected": false, "result": "unrated site"}, "Blueliv": {"detected": false, "result": "clean site"}, "BlockList": {"detected": false, "result": "clean site"}, "Netcraft": {"detected": false, "result": "unrated site"}, "CRDF": {"detected": false, "result": "clean site"}, "ThreatHive": {"detected": false, "result": "clean site"}, "BADWARE.INFO": {"detected": false, "result": "clean site"}, "FraudScore": {"detected": false, "result": "clean site"}, "Quick Heal": {"detected": false, "result": "clean site"}, "Rising": {"detected": false, "result": "clean site"}, "StopBadware": {"detected": false, "result": "unrated site"}, "Sucuri SiteCheck": {"detected": false, "result": "clean site"}, "Fortinet": {"detected": false, "result": "clean site"}, "StopForumSpam": {"detected": false, "result": "clean site"}, "ZeroCERT": {"detected": false, "result": "clean site"}, "Baidu-International": {"detected": false, "result": "clean site"}, "Phishing Database": {"detected": false, "result": "clean site"}}}
 function jsonParsing(fetchedData) {
+    let infomap = new Map();
     infomap.set("positives", fetchedData.positives);
     infomap.set("total", fetchedData.total);
     infomap.set("url", fetchedData.url);
