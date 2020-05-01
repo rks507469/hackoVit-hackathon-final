@@ -5,43 +5,23 @@
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
         <title>Security Extension</title>
-      <!--    <link rel="stylesheet" href="Bootstarp/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="Bootstarp/css/bootstrap.css" type="text/css"> 
-        <script type="text/javascript" src="Bootstarp/js/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="Bootstarp/js/bootstrap.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-        <script type="text/javascript" src="Bootstarp/js/jquery-3.4.1.slim.min.js"></script>    -->
         
         <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Open+Sans" type = "text/css">
         <link rel="stylesheet"  type="text/css"  href="style.css">
-       <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">  -->
     </head>
     <body>
         <div class = "modal-header">
             <h1 class="logo">
                 <img src="assets/Final%20logo_300.png" alt="logo" class="logo-icon"> Captain Malware
             </h1>  
-         <!-- <div class="grid">
-          <div class="row grid-row ">
-          <div class=" col-xs-4">
-              <img src="Captain%20Malware.PNG" alt="logo" class="logo-icon">
-          </div>
-          <div class="col-xs-8 ">
-              <h1 class="logo">
-                Captain Malware
-            </h1> 
-              </div>
-               
-            </div>
-            </div> -->
         </div>
         <div class="modal-content">
-            <p>Hey, the website that you've searched is clean.<br>
-                You're good to go!
-            </p>
+            <input type="text" placeholder="Type URL" id="inputBox">
+		    <button type="button" onclick="getInputValue()">Submit</button> 
         </div>
 
-     <script src = "popup.js"></script>  
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+     <script src = "js/app.js"></script>
     </body>
 </html>
