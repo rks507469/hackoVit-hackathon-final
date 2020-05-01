@@ -15,10 +15,10 @@
     "background": {
         "scripts": [ "background_script.js"] 
     },
-    "icons": {"128": "Final logo_128.png"},
+    "icons": {"128": "assets/Final logo_128.png"},
     
     "browser_action":{
-        "default_icon": "Final logo_19.png"
+        "default_icon": "assets/Final logo_19.png"
     },
     
     "browser_action": {
