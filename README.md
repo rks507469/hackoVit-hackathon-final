@@ -3,4 +3,5 @@
 <ul>
     <li>Skelton code added</li>
     <li>Web Browser Extension files added</li>
+    <li>Connection b/w the backend and the frontend is done</li>
 </ul>
