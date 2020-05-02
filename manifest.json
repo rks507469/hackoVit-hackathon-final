@@ -3,26 +3,12 @@
     "name": "Security Extension",
     "description": "checking for malicious URLs",
     "version": "1.0.0",
-    "content_scripts":[ 
-        {   
-            "matches": [
-                "<all_urls>" // condition that will load our page!
-            ],
-            "js": ["content_script.js"]  // script can call our html page through window.location.href = url (our extention page); tag when we detect a malacious website
-           
-        }
-    ],
-    "background": {
-        "scripts": [ "background_script.js"] 
-    },
     "icons": {"128": "assets/Final logo_128.png"},
     
     "browser_action":{
+        "default_popup": "popup.html",
         "default_icon": "assets/Final logo_19.png"
     },
     
-    "browser_action": {
-       "default_popup": "extention.html" //I have enabled this just for trial purpose, we'll remove this once we have attached it to our content_script
-   },
     "permissions": ["activeTab"]
 }
