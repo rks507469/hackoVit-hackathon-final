@@ -1,7 +1,13 @@
 <h1>This is the HackoVIT hackathon Repository</h1>
 <p>We are implementing the chrome Extension to detect the malacious websites</p>
+<h3>Instructions to use</h3>
 <ul>
-    <li>Skelton code added</li>
-    <li>Web Browser Extension files added</li>
-    <li>Connection b/w the backend and the frontend is done</li>
+    <li>clone the repository</li>
+    <li>Open google chrome => settings => Extensions</li>
+    <li>Turn on the Developer Mode</li>
+    <li>Load Unpacked</li>
+    <li>Select the cloned repo on your system</li>
+    <li>Click on the reload Button</li>
+    <li>Now the icon is on the right side of the address bar</li>
+    <li>Extension is Ready to Go!</li>
 </ul>
