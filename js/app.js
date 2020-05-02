@@ -1,9 +1,8 @@
 //This is the mechanics of the JavaScript Extension
 
-//taking the input from the extension Page
+//important global variables
 let output;
 let detected, total, undetected, checkedUrl;
-//making it a complete URL
 
 //converting it the sha65
 //Sourced from : https://geraintluff.github.io/sha256/
@@ -90,6 +89,7 @@ var sha256 = function sha256(ascii) {
   return result;
 };
 
+//taking the input from the extension Page
 function getInputValue() {
   let input = document.getElementById("inputBox").value;
   output = sha256(input);
@@ -126,6 +126,7 @@ async function getData() {
     chartIt(detected, undetected, total);
   });
 }
+
 // //fetching the data
 // const response = await fetch(apiUrl, {
 //     method : 'GET',
@@ -144,8 +145,6 @@ async function getData() {
 //   undetected = total - detected;
 //     return {detected, undetected, total, checkedUrl};
 // }
-
-//technology stack
 
 //graphing or plotting function
 async function chartIt(detected, undetected, total) {
