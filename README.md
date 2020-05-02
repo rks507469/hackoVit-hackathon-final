@@ -11,3 +11,6 @@
     <li>Now the icon is on the right side of the address bar</li>
     <li>Extension is Ready to Go!</li>
 </ul>
+<h3>Important</h3>
+Format of the URL should be
+<p>http(s)://www.abc.xyz.com/</p>
