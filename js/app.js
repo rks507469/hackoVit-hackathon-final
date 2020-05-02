@@ -119,14 +119,19 @@ async function getData() {
 
   $.getJSON(finalURL, function (data) {
     console.log(data);
-    let infomap = new Map();
-    infomap.set("positives", data.positives);
-    infomap.set("total", data.total);
-    infomap.set("url", data.url);
-    detected = parseInt(infomap.get("positives"));
-    total = parseInt(infomap.get("total"));
+    // let infomap = new Map();
+    // infomap.set("positives", data.positives);
+    // infomap.set("total", data.total);
+    // infomap.set("url", data.url);
+    detected = parseInt(data.positives);
+    total = parseInt(data.total);
     undetected = total - detected;
-    checkedUrl = infomap.get("url");
+    checkedUrl = data.url;
+    if(detected > 0) {
+      document.getElementById('result').innerHTML = '<p style="color:red">Malicious - Do Not Proceed</p>';
+    } else {
+      document.getElementById('result').innerHTML = '<p style="color:green">Safe to Proceed</p>';
+    }
     chartIt(detected, undetected, total);
   });
 }
