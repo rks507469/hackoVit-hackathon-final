@@ -4,6 +4,10 @@
 let output;
 let detected, total, undetected, checkedUrl;
 
+//on the loading of the DOM Content
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('submit').addEventListener('click', getInputValue);
+});
 //converting it the sha65
 //Sourced from : https://geraintluff.github.io/sha256/
 var sha256 = function sha256(ascii) {

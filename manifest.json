@@ -4,11 +4,9 @@
     "description": "checking for malicious URLs",
     "version": "1.0.0",
     "icons": {"128": "assets/Final logo_128.png"},
-    
     "browser_action":{
         "default_popup": "popup.html",
         "default_icon": "assets/Final logo_19.png"
     },
-    
     "permissions": ["activeTab"]
 }
